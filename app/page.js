@@ -1,10 +1,14 @@
+import AboutSection from "./components/aboutSection";
 import HeroSection from "./components/heroSection";
+import Navbar from "./components/navbar";
 
 export default function Home() {
    return (
       <main className="flex min-h-screen flex-col bg-[#121212]">
-         <div className="container mx-auto py-12 px-6 lg:px-0">
+         <Navbar></Navbar>
+         <div className="container mx-auto mt-16 lg:mt-24 py-8 px-6 lg:px-0">
             <HeroSection></HeroSection>
+            <AboutSection></AboutSection>
          </div>
       </main>
    );
