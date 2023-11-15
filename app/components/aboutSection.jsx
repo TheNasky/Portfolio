@@ -1,8 +1,18 @@
+// Import necessary libraries and components
 "use client";
 import Image from "next/image";
 import { useState, useTransition } from "react";
 import TabButton from "./tabButton";
+import { NextJs, Tailwind, ReactJs } from "@/public/icons/iconsBig";
 
+// Tooltip component
+const Tooltip = ({ text }) => (
+   <div className="hidden group-hover:block absolute z-10 p-2 bg-gray-800 text-white rounded-md">
+      {text}
+   </div>
+);
+
+// Data for tabs
 const TAB_DATA = [
    {
       title: "Skills",
@@ -33,12 +43,15 @@ const TAB_DATA = [
                Technical Title in Programming at: National University of Quilmes From: Feb 2021
                to Now
             </li>
-            <li>Coderhouse Full Stack Develpment Courses</li>
+            <li>Coderhouse Full Stack Development Courses</li>
          </ul>
       ),
    },
 ];
+
+// AboutSection component
 export default function AboutSection() {
+   // State and transition logic
    const [currentTab, setCurrentTab] = useState("skills");
    const [isPending, startTransition] = useTransition();
 
@@ -47,11 +60,18 @@ export default function AboutSection() {
          setCurrentTab(id);
       });
    };
+
+   // Render the component
    return (
-      <section>
+      <section id="about" className="mb-14">
          <div className="text-white">
             <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 xl:gap-16 sm:py-16 xl-px-16">
-               <Image src="/Images/Desktop.webp" width={500} height={500} />
+               <Image
+                  src="/Images/Desktop.webp"
+                  alt="About me image"
+                  width={500}
+                  height={500}
+               />
                <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
                   <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
                   <p className="text-base md:text-lg">

@@ -1,19 +1,32 @@
 "use client";
 import Link from "next/link";
-import NavLink from "./navLink";
 import NavLink2 from "./navLink2";
 import { useState } from "react";
 import MenuOverlay from "./menuOverlay";
 
 const navLinks = [
-   { title: "About", path: "#about" },
-   { title: "Projects", path: "#projects" },
-   { title: "Contact", path: "#contact" },
+   { title: "About", path: "#about", offset: -50 },
+   { title: "Projects", path: "#projects", offset: -110 },
+   { title: "Contact", path: "#contact", offset: -40 },
 ];
+
 export default function Navbar() {
    const [navbarOpen, setNavbarOpen] = useState(false);
+
+   const scrollToSection = (path, offset) => {
+      const element = document.querySelector(path);
+      if (element) {
+         const offsetTop = element.offsetTop + offset;
+         window.scrollTo({
+            top: offsetTop,
+            behavior: "smooth",
+         });
+         setNavbarOpen(false);
+      }
+   };
+
    return (
-      <nav className="fixed top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-95 ">
+      <nav className="fixed top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-95 mb-4 border-b-2 border-[#33353f] pb-3">
          <div className="flex flex-wrap items-center justify-between mx-auto p-4">
             <Link href={"/"} className="text-2xl md:text-3xl text-white font-semibold">
                <span className="font-extrabold">Valentín</span>
@@ -69,9 +82,10 @@ export default function Navbar() {
                <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8 mt-0">
                   {navLinks.map((link, index) => (
                      <li key={index}>
-                        <NavLink2 href={link.path} title={link.title}>
-                           {" "}
-                        </NavLink2>
+                        <NavLink2
+                           onClick={() => scrollToSection(link.path, link.offset)}
+                           title={link.title}
+                        />
                      </li>
                   ))}
                </ul>
