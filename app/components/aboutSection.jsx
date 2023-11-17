@@ -118,7 +118,7 @@ export default function AboutSection() {
          <div className="text-white">
             <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 xl:gap-16 sm:py-16 xl-px-16">
                <Image
-                  src="/Images/Desktop.webp"
+                  src="/images/Desktop.webp"
                   alt="About me image"
                   className="rounded-lg"
                   width={500}
