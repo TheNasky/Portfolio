@@ -18,9 +18,9 @@ export default function HeroSection() {
                      sequence={[
                         "Web Developer",
                         3500,
-                        "API Architect",
-                        4500,
                         "Ux/Ui Designer",
+                        4500,
+                        "API Architect",
                         3500,
                      ]}
                      wrapper="span"

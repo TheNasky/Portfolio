@@ -2,10 +2,10 @@
 import Link from "next/link";
 import NavLink2 from "./navLink2";
 import { useState } from "react";
-import MenuOverlay from "./menuOverlay";
+import NavLink from "./navLink";
 
 const navLinks = [
-   { title: "About", path: "#about", offset: -50 },
+   { title: "About", path: "#about", offset: -55 },
    { title: "Projects", path: "#projects", offset: -110 },
    { title: "Contact", path: "#contact", offset: -40 },
 ];
@@ -91,7 +91,16 @@ export default function Navbar() {
                </ul>
             </div>
          </div>
-         {navbarOpen ? <MenuOverlay links={navLinks} /> : null}
+         {navbarOpen
+            ? navLinks.map((link, index) => (
+                 <li key={index}>
+                    <NavLink
+                       onClick={() => scrollToSection(link.path, link.offset)}
+                       title={link.title}
+                    />
+                 </li>
+              ))
+            : null}
       </nav>
    );
 }

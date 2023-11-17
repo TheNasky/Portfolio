@@ -9,7 +9,7 @@ const projectsData = [
       id: 1,
       title: "NextJs Portfolio",
       description: "My 2023 Portfolio built with NextJs",
-      image: "/images/projects/test.webp",
+      image: "/images/projects/Portfolio.webp",
       tags: ["All", "Personal"],
       githubURL: "/",
       previewURL: "/",

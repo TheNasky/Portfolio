@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState, useTransition } from "react";
 import TabButton from "./tabButton";
-import { NextJs, Tailwind, ReactJs } from "@/public/icons/iconsBig";
+import { getIconByName } from "@/public/icons/iconsPng";
 
 // Tooltip component
 const Tooltip = ({ text }) => (
@@ -18,9 +18,60 @@ const TAB_DATA = [
       title: "Skills",
       id: "skills",
       content: (
-         <ul>
-            <li>NodeJs</li>
-            <li>ExpressJs</li>
+         <ul className="grid grid-cols-3 text-xs lg:text-lg sm:text-s">
+            <div>
+               <li className="xl:pb-1 flex items-center">
+                  React.Js<span className="mt-2 pl-1">{getIconByName("ReactJs")()}</span>
+               </li>
+               <li className="xl:pb-1 flex items-center">
+                  Next.Js<span className="mt-2 pl-1">{getIconByName("NextJs")()}</span>
+               </li>
+               <li className="xl:pb-1 flex items-center">
+                  Tailwind<span className="mt-2 pl-1">{getIconByName("Tailwind")()}</span>
+               </li>
+
+               <li className="xl:pb-1 flex items-center">
+                  Nest.Js<span className="mt-2 pl-1">{getIconByName("NestJs")()}</span>
+               </li>
+
+               <li className="xl:pb-1 flex items-center">
+                  Express.Js<span className="mt-2 pl-1">{getIconByName("ExpressJs")()}</span>
+               </li>
+            </div>
+            <div>
+               <li className="xl:pb-1 flex items-center">
+                  Node.Js<span className="mt-2 pl-1">{getIconByName("NodeJs")()}</span>
+               </li>
+               <li className="xl:pb-1 flex items-center">
+                  JavaScript<span className="mt-2 pl-1">{getIconByName("JavaScript")()}</span>
+               </li>
+               <li className="xl:pb-1 flex items-center">
+                  TypeScript<span className="mt-2 pl-1">{getIconByName("TypeScript")()}</span>
+               </li>
+               <li className="xl:pb-1 flex items-center">
+                  Firebase<span className="mt-2 pl-1">{getIconByName("Firebase")()}</span>
+               </li>
+               <li className="xl:pb-1 flex items-center">
+                  MongoDB<span className="mt-2 pl-1">{getIconByName("MongoDB")()}</span>
+               </li>
+            </div>
+            <div>
+               <li className="xl:pb-1 flex items-center">
+                  Docker<span className="mt-2 pl-1">{getIconByName("Docker")()}</span>
+               </li>
+               <li className="xl:pb-1 flex items-center">
+                  Kubernetes<span className="mt-2 pl-1">{getIconByName("Kubernetes")()}</span>
+               </li>
+               <li className="xl:pb-1 flex items-center">
+                  HTML5<span className="mt-2 pl-1">{getIconByName("HTML5")()}</span>
+               </li>
+               <li className="xl:pb-1 flex items-center">
+                  CSS<span className="mt-2 pl-1">{getIconByName("CSS")()}</span>
+               </li>
+               <li className="xl:pb-1 flex items-center">
+                  SASS<span className="mt-2 pl-1">{getIconByName("SASS")()}</span>
+               </li>
+            </div>
          </ul>
       ),
    },
@@ -69,10 +120,11 @@ export default function AboutSection() {
                <Image
                   src="/Images/Desktop.webp"
                   alt="About me image"
+                  className="rounded-lg"
                   width={500}
                   height={500}
                />
-               <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
+               <div className="mt-4 md:mt-0 text-left flex flex-col h-full bg-[#181818] rounded-lg p-4">
                   <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
                   <p className="text-base md:text-lg">
                      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt,
@@ -80,7 +132,7 @@ export default function AboutSection() {
                      recusandae iste, dignissimos natus sequi ex doloremque quo tempora quod,
                      accusantium magni!
                   </p>
-                  <div className="flex flex-row mt-8">
+                  <div className="flex flex-row mt-8 lg:justify-start justify-center">
                      <TabButton
                         selectTab={() => handleTabChange("skills")}
                         active={currentTab === "skills"}
