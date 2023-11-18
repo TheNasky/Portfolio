@@ -62,7 +62,7 @@ export const icons = [
       component: ({ size = 25 }) => (
          <div className="relative inline-block group">
             <Image
-               src="/images/icons/NestJs2.webp"
+               src="/images/icons/NestJs.webp"
                alt="NestJs Logo"
                className=""
                width={size}
@@ -286,9 +286,9 @@ export const getIconTt = (name, { size = 25 } = {}) => {
       return (
          <div className="relative inline-block group">
             {icon.component({ size })}
-            <span className="opacity-0 bg-[#1E293B] text-white text-s py-1 px-2 rounded absolute bottom-full left-1/2 transform -translate-x-1/2 -translate-y-2 group-hover:opacity-100 transition-opacity duration-300">
+            <div className="tooltip hidden group-hover:block bg-gray-800 text-white text-m py-1 px-1 rounded absolute left-1/2 transform -translate-x-1/2 transition-opacity duration-300">
                {icon.name}
-            </span>
+            </div>
          </div>
       );
    } else {
