@@ -3,6 +3,7 @@ import ProjectCard from "./projectCard";
 import ProjectTag from "./projectTag";
 import { useState } from "react";
 import { Tailwind, NextJs, ReactJs } from "@/public/icons/icons";
+import { getIcon, getIconTt } from "@/public/icons/icons";
 
 const projectsData = [
    {
@@ -13,37 +14,37 @@ const projectsData = [
       tags: ["All", "Personal"],
       githubURL: "/",
       previewURL: "/",
-      icons: [ReactJs, NextJs, Tailwind],
+      icons: [getIconTt("ReactJs"), getIconTt("NextJs"), getIconTt("Tailwind")],
    },
    {
       id: 2,
-      title: "Desktop",
-      description: "Desktop image",
-      image: "/images/projects/verga.webp",
-      tags: ["All"],
-      githubURL: "/",
-      previewURL: "/",
-      icons: [NextJs, Tailwind],
-   },
-   {
-      id: 3,
-      title: "Desktop",
-      description: "Desktop image",
+      title: "Placeholder",
+      description: "Placeholder Project",
       image: "/images/projects/juan.jfif",
       tags: ["All"],
       githubURL: "/",
       previewURL: "/",
-      icons: [NextJs, Tailwind],
+      icons: [getIconTt("ReactJs"), getIconTt("NextJs"), getIconTt("Tailwind")],
    },
    {
-      id: 4,
-      title: "Desktop",
-      description: "Desktop image",
-      image: "/images/projects/xsa.jfif",
+      id: 3,
+      title: "Placeholder",
+      description: "Placeholder Project",
+      image: "/images/projects/juan.jfif",
       tags: ["All"],
       githubURL: "/",
       previewURL: "/",
-      icons: [NextJs, Tailwind],
+      icons: [getIconTt("ReactJs"), getIconTt("NextJs"), getIconTt("Tailwind")],
+   },
+   {
+      id: 4,
+      title: "Placeholder",
+      description: "Placeholder Project",
+      image: "/images/projects/juan.jfif",
+      tags: ["All"],
+      githubURL: "/",
+      previewURL: "/",
+      icons: [getIconTt("ReactJs"), getIconTt("NextJs"), getIconTt("Tailwind")],
    },
 ];
 
@@ -80,7 +81,7 @@ export default function ProjectsSection() {
                   description={project.description}
                   imgUrl={project.image}
                   githubURL={project.githubURL}
-                  previewUrl={project.previewURL}
+                  previewURL={project.previewURL}
                   icons={project.icons}
                ></ProjectCard>
             ))}

@@ -4,8 +4,8 @@ export default function ProjectCard({
    imgUrl,
    title,
    description,
-   gitHubUrl,
-   previewUrl,
+   gitHubURL,
+   previewURL,
    icons,
 }) {
    return (
@@ -19,7 +19,7 @@ export default function ProjectCard({
                group-hover:flex group-hover:bg-opacity-80 transition-all duration-500 rounded-t-xl"
             >
                <Link
-                  href={"gitHubUrl"}
+                  href={gitHubURL || "/"}
                   className="h-14 w-14 border-2 mr-8 relative rounded-full border-[#ADB7BE] hover:border-[#3fcb7c] group/link"
                >
                   <svg
@@ -39,7 +39,7 @@ export default function ProjectCard({
                   </svg>
                </Link>
                <Link
-                  href={"previewUrl"}
+                  href={previewURL || "/"}
                   className="h-14 w-14 border-2 relative rounded-full border-[#ADB7BE] hover:border-[#3fcb7c] group/link2"
                >
                   <svg
@@ -69,11 +69,8 @@ export default function ProjectCard({
                <h5 className="text-xl font-semibold mb-1">{title} </h5>{" "}
                <span className="flex flex-wrap">
                   {icons.map((Icon, index) => (
-                     <span key={index} className="relative inline-block group">
-                        <Icon className="w-6 h-6 text-[#ADB7BE] group-hover:text-white" />
-                        <span className="opacity-0 bg-[#1E293B] text-white text-xs py-1 px-2 rounded absolute bottom-full left-1/2 transform -translate-x-1/2 -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-opacity duration-300">
-                           {Icon.displayName || Icon.name}
-                        </span>
+                     <span key={index} className="px-0.5">
+                        {Icon}
                      </span>
                   ))}
                </span>

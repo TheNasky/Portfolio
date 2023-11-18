@@ -10,7 +10,7 @@ export default function HeroSection() {
                <h1 className="text-white mb-4 text-4xl lg:text-6xl font-extrabold 2xl:text-8xl">
                   <div>
                      <span className="text-transparent bg-clip-text gradient-background">
-                        Hello, I'm{""}
+                        Hello, I'm
                      </span>
                      <span> Valentín </span>
                   </div>

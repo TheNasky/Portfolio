@@ -1,4 +1,5 @@
 import AboutSection from "./components/aboutSection";
+import EmailSection from "./components/emailSection";
 import HeroSection from "./components/heroSection";
 import Navbar from "./components/navbar";
 import ProjectsSection from "./components/projectsSection";
@@ -11,6 +12,7 @@ export default function Home() {
             <HeroSection></HeroSection>
             <AboutSection></AboutSection>
             <ProjectsSection></ProjectsSection>
+            <EmailSection></EmailSection>
          </div>      
       </main>
    );

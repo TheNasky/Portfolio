@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState, useTransition } from "react";
 import TabButton from "./tabButton";
-import { getIconByName } from "@/public/icons/iconsPng";
+import { getIcon, getIconTt } from "@/public/icons/icons";
 
 // Tooltip component
 const Tooltip = ({ text }) => (
@@ -21,55 +21,67 @@ const TAB_DATA = [
          <ul className="grid grid-cols-3 text-xs lg:text-lg sm:text-s">
             <div>
                <li className="xl:pb-1 flex items-center">
-                  React.Js<span className="mt-2 pl-1">{getIconByName("ReactJs")()}</span>
+                  React.Js
+                  <span className="pt-2 pl-1">{getIcon("ReactJs", { size: 25 })}</span>
                </li>
                <li className="xl:pb-1 flex items-center">
-                  Next.Js<span className="mt-2 pl-1">{getIconByName("NextJs")()}</span>
+                  Next.Js
+                  <span className="pt-2 pl-1">{getIcon("NextJs", { size: 25 })}</span>
                </li>
                <li className="xl:pb-1 flex items-center">
-                  Tailwind<span className="mt-2 pl-1">{getIconByName("Tailwind")()}</span>
-               </li>
-
-               <li className="xl:pb-1 flex items-center">
-                  Nest.Js<span className="mt-2 pl-1">{getIconByName("NestJs")()}</span>
-               </li>
-
-               <li className="xl:pb-1 flex items-center">
-                  Express.Js<span className="mt-2 pl-1">{getIconByName("ExpressJs")()}</span>
-               </li>
-            </div>
-            <div>
-               <li className="xl:pb-1 flex items-center">
-                  Node.Js<span className="mt-2 pl-1">{getIconByName("NodeJs")()}</span>
+                  Node.Js
+                  <span className="pt-2 pl-1">{getIcon("NodeJs", { size: 25 })}</span>
                </li>
                <li className="xl:pb-1 flex items-center">
-                  JavaScript<span className="mt-2 pl-1">{getIconByName("JavaScript")()}</span>
+                  Nest.Js
+                  <span className="pt-2 pl-1">{getIcon("NestJs", { size: 25 })}</span>
                </li>
                <li className="xl:pb-1 flex items-center">
-                  TypeScript<span className="mt-2 pl-1">{getIconByName("TypeScript")()}</span>
-               </li>
-               <li className="xl:pb-1 flex items-center">
-                  Firebase<span className="mt-2 pl-1">{getIconByName("Firebase")()}</span>
-               </li>
-               <li className="xl:pb-1 flex items-center">
-                  MongoDB<span className="mt-2 pl-1">{getIconByName("MongoDB")()}</span>
+                  Express.Js
+                  <span className="pt-2 pl-1">{getIcon("ExpressJs", { size: 25 })}</span>
                </li>
             </div>
             <div>
                <li className="xl:pb-1 flex items-center">
-                  Docker<span className="mt-2 pl-1">{getIconByName("Docker")()}</span>
+                  Tailwind
+                  <span className="pt-2 pl-1">{getIcon("Tailwind", { size: 25 })}</span>
                </li>
                <li className="xl:pb-1 flex items-center">
-                  Kubernetes<span className="mt-2 pl-1">{getIconByName("Kubernetes")()}</span>
+                  JavaScript
+                  <span className="pt-2 pl-1">{getIcon("JavaScript", { size: 25 })}</span>
                </li>
                <li className="xl:pb-1 flex items-center">
-                  HTML5<span className="mt-2 pl-1">{getIconByName("HTML5")()}</span>
+                  TypeScript
+                  <span className="pt-2 pl-1">{getIcon("TypeScript", { size: 25 })}</span>
                </li>
                <li className="xl:pb-1 flex items-center">
-                  CSS<span className="mt-2 pl-1">{getIconByName("CSS")()}</span>
+                  MongoDB
+                  <span className="pt-2 pl-1">{getIcon("MongoDB", { size: 25 })}</span>
                </li>
                <li className="xl:pb-1 flex items-center">
-                  SASS<span className="mt-2 pl-1">{getIconByName("SASS")()}</span>
+                  Firebase
+                  <span className="pt-2 pl-1">{getIcon("Firebase", { size: 25 })}</span>
+               </li>
+            </div>
+            <div>
+               <li className="xl:pb-1 flex items-center">
+                  Docker
+                  <span className="pt-2 pl-1">{getIcon("Docker", { size: 25 })}</span>
+               </li>
+               <li className="xl:pb-1 flex items-center">
+                  Kubernetes
+                  <span className="pt-2 pl-1">{getIcon("Kubernetes", { size: 25 })}</span>
+               </li>
+               <li className="xl:pb-1 flex items-center">
+                  HTML5 <span className="pt-2 pl-1">{getIcon("HTML5", { size: 25 })}</span>
+               </li>
+               <li className="xl:pb-1 flex items-center">
+                  CSS
+                  <span className="pt-2 pl-1">{getIcon("CSS", { size: 25 })}</span>
+               </li>
+               <li className="xl:pb-1 flex items-center">
+                  SASS
+                  <span className="pt-2 pl-1">{getIcon("SASS", { size: 25 })}</span>
                </li>
             </div>
          </ul>
@@ -152,7 +164,7 @@ export default function AboutSection() {
                         EDUCATION
                      </TabButton>
                   </div>
-                  <div className="mt-8">
+                  <div className="mt-4">
                      {TAB_DATA.find((t) => t.id === currentTab).content}{" "}
                   </div>
                </div>
