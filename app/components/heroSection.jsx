@@ -1,6 +1,19 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { TypeAnimation } from "react-type-animation";
+
+
+const scrollToSection = (path, offset) => {
+   const element = document.querySelector(path);
+   if (element) {
+      const offsetTop = element.offsetTop + offset;
+      window.scrollTo({
+         top: offsetTop,
+         behavior: "smooth",
+      });
+   }
+};
 
 export default function HeroSection() {
    return (
@@ -30,18 +43,23 @@ export default function HeroSection() {
                   />
                </h1>
                <p className="text-gray-300 text-base sm:text-lg lg:text-xl mb-6 lg:w-11/12">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem aliquid
-                  molestias, reiciendis dolore exercitationem nam,
+                  Turning ideas into captivating digital experiences with passion and
+                  precision. Let's bring your ideas to life!
                </p>
-               <div className="flex justify-center md:justify-normal ">
-                  <button className="px-6 py-3 w-full md:w-fit rounded-full mr-4 gradient-background2 text-[#181818] font-bold mt-3 2xl:text-2xl 2xl:px-8 2xl:py-4">
-                     Contact Me
+               <div className="flex justify-center md:justify-normal">
+                  <button
+                     onClick={() => scrollToSection("#contact", 20)}
+                     className="mr-4 px-1 py-1 w-full md:w-fit rounded-full gradient-background text-white mt-3"
+                  >
+                     <span className="transition ease-in-out delay-45 w-full block bg-[#121212] hover:bg-stone-700 rounded-full px-6 py-3 2xl:text-2xl 2xl:px-8 2xl:py-4">
+                        Contact Me
+                     </span>
                   </button>
-                  <button className=" px-1 py-1 w-full md:w-fit rounded-full bg-gradient-to-br from-cyan-400 via-teal-400 to-green-500 hover:bg-slate-800 text-white mt-3">
+                  <a href="/Valentín Ballesteros Resume.pdf" download="Valentín Ballesteros Resume.pdf" className=" px-1 py-1 w-full md:w-fit rounded-full gradient-background text-white mt-3">
                      <span className="transition ease-in-out delay-45 w-full block bg-[#121212] hover:bg-stone-700 rounded-full px-6 py-3 2xl:text-2xl 2xl:px-8 2xl:py-4">
                         Download CV
                      </span>
-                  </button>
+                  </a>
                </div>
             </div>
             <div className="col-span-5 xl:col-span-4 place-self-center mt-8 lg:mt-0">

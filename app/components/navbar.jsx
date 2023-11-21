@@ -7,7 +7,7 @@ import NavLink from "./navLink";
 const navLinks = [
    { title: "About", path: "#about", offset: -55 },
    { title: "Projects", path: "#projects", offset: -110 },
-   { title: "Contact", path: "#contact", offset: -40 },
+   { title: "Contact", path: "#contact", offset: -140 },
 ];
 
 export default function Navbar() {
@@ -93,13 +93,13 @@ export default function Navbar() {
          </div>
          {navbarOpen
             ? navLinks.map((link, index) => (
-                 <li key={index}>
-                    <NavLink
-                       onClick={() => scrollToSection(link.path, link.offset)}
-                       title={link.title}
-                    />
-                 </li>
-              ))
+               <li key={index}>
+               <NavLink
+                  onClick={() => scrollToSection(link.path, link.offset)}
+                  title={link.title}
+               />
+               </li>
+                  ))
             : null}
       </nav>
    );

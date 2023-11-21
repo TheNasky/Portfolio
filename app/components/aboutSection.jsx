@@ -18,8 +18,8 @@ const TAB_DATA = [
       title: "Skills",
       id: "skills",
       content: (
-         <ul className="grid grid-cols-3 text-xs lg:text-lg sm:text-s 2xl:mt-6 mt-4">
-            <div>
+         <div className="grid grid-cols-3 text-xs lg:text-lg sm:text-s 2xl:mt-6 mt-4">
+            <ul>
                <li className="xl:pb-1 flex items-center 2xl:text-2xl 2xl:pb-2">
                   React.Js
                   <span className="pt-2 pl-1">{getIcon("ReactJs", { size: 25 })}</span>
@@ -40,8 +40,8 @@ const TAB_DATA = [
                   Express.Js
                   <span className="pt-2 pl-1">{getIcon("ExpressJs", { size: 25 })}</span>
                </li>
-            </div>
-            <div>
+            </ul>
+            <ul>
                <li className="xl:pb-1 flex items-center 2xl:text-2xl 2xl:pb-2">
                   Tailwind
                   <span className="pt-2 pl-1">{getIcon("Tailwind", { size: 25 })}</span>
@@ -62,8 +62,8 @@ const TAB_DATA = [
                   Firebase
                   <span className="pt-2 pl-1">{getIcon("Firebase", { size: 25 })}</span>
                </li>
-            </div>
-            <div>
+            </ul>
+            <ul>
                <li className="xl:pb-1 flex items-center 2xl:text-2xl 2xl:pb-2">
                   Docker
                   <span className="pt-2 pl-1">{getIcon("Docker", { size: 25 })}</span>
@@ -83,8 +83,8 @@ const TAB_DATA = [
                   SASS
                   <span className="pt-2 pl-1">{getIcon("SASS", { size: 25 })}</span>
                </li>
-            </div>
-         </ul>
+            </ul>
+         </div>
       ),
    },
    {
@@ -126,7 +126,7 @@ export default function AboutSection() {
 
    // Render the component
    return (
-      <section id="about" className="mb-14">
+      <section id="about" className="mb-24 2xl:mb-60 2xl:pt-36">
          <div className="text-white">
             <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 xl:gap-16 sm:py-16">
                <Image
@@ -139,10 +139,10 @@ export default function AboutSection() {
                <div className="mt-4 md:mt-0 text-left flex flex-col h-full bg-[#181818] rounded-lg p-4 2xl:p-8 2xl:w-full 2xl:h-full">
                   <h2 className="text-4xl font-bold text-white mb-4 2xl:text-6xl">About Me</h2>
                   <p className="text-base md:text-m 2xl:text-xl 2xl:mb-2">
-                     Dedicated Full Stack Web Developer boasting 2 years of practical
-                     experience in Node.js, React, Next.js, Nest.js, ExpressJs, and Databases,
-                     with Demonstrated success in developing efficient web applications and
-                     designing robust RESTful APIs.
+                     I'm Valentín, Dedicated Full Stack Web Developer boasting 2 years of
+                     practical experience in Node.js, React, Next.js, Nest.js, ExpressJs, and
+                     Databases, with Demonstrated success in developing efficient web
+                     applications and designing robust RESTful APIs.
                   </p>
                   <div className="flex flex-row mt-8 lg:justify-start justify-center 2xl:text-2xl">
                      <TabButton

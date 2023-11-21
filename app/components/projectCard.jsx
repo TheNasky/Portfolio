@@ -4,14 +4,14 @@ export default function ProjectCard({
    imgUrl,
    title,
    description,
-   gitHubURL,
+   githubURL,
    previewURL,
    icons,
 }) {
    return (
-      <div>
+      <div className="">
          <div
-            className="h-52 rounded-t-xl relative group"
+            className="h-52 rounded-t-xl relative group border-t border-l border-r border-[#3fcb7c] "
             style={{ background: `url(${imgUrl})`, backgroundSize: "cover" }}
          >
             <div
@@ -19,7 +19,7 @@ export default function ProjectCard({
                group-hover:flex group-hover:bg-opacity-80 transition-all duration-500 rounded-t-xl"
             >
                <Link
-                  href={gitHubURL || "/"}
+                  href={githubURL || "/"}
                   className="h-14 w-14 border-2 mr-8 relative rounded-full border-[#ADB7BE] hover:border-[#3fcb7c] group/link"
                >
                   <svg
@@ -64,7 +64,7 @@ export default function ProjectCard({
                </Link>
             </div>
          </div>
-         <div className="text-white rounded-b-xl bg-[#181818] py-6 px-4">
+         <div className="text-white rounded-b-xl bg-[#181818] py-6 px-4 border border-[#3fcb7c]">
             <div className="flex justify-between mb-1 border-[#ADB7BE] border-b-2 ">
                <h5 className="text-xl font-semibold mb-1">{title} </h5>{" "}
                <span className="flex flex-wrap">
