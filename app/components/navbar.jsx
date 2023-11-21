@@ -59,6 +59,7 @@ export default function Navbar() {
                ) : (
                   <button
                      onClick={() => setNavbarOpen(true)}
+                     aria-label="Navbar Button"
                      className="flex items-center rounded px-3 py-2 border border-slate-200 text-slate-200 hover:text-white hover:border-white"
                   >
                      <svg

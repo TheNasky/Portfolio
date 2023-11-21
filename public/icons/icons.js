@@ -267,6 +267,20 @@ export const icons = [
          </div>
       ),
    },
+   {
+      name: "Whatsapp",
+      component: ({ size = 25 }) => (
+         <div className="relative inline-block group">
+            <Image
+               src="/images/icons/Whatsapp.webp"
+               alt="Whatsapp Logo"
+               className=""
+               width={size}
+               height={size}
+            />
+         </div>
+      ),
+   },
 ];
 
 export const getIcon = (name, { size = 25 } = {}) => {

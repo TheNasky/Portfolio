@@ -57,6 +57,9 @@ const EmailSection = () => {
                <Link href={"https://www.linkedin.com/in/valent%C3%ADn-ballesteros-49868023a/"}>
                   {getIconTt("Linkedin", { size: 30 })}{" "}
                </Link>
+               <Link href={"https://www.linkedin.com/in/valent%C3%ADn-ballesteros-49868023a/"}>
+                  {getIconTt("Whatsapp", { size: 30 })}{" "}
+               </Link>
             </div>
          </div>
          <div>
@@ -79,7 +82,7 @@ const EmailSection = () => {
                         id="email"
                         required
                         className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                        placeholder="jacob@google.com"
+                        placeholder="YourEmail@google.com"
                      />
                   </div>
                   <div className="mb-6">
