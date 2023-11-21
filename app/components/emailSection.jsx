@@ -57,7 +57,7 @@ const EmailSection = () => {
                <Link href={"https://www.linkedin.com/in/valent%C3%ADn-ballesteros-49868023a/"}>
                   {getIconTt("Linkedin", { size: 30 })}{" "}
                </Link>
-               <Link href={"https://www.linkedin.com/in/valent%C3%ADn-ballesteros-49868023a/"}>
+               <Link href={"https://wa.me/+541161535767"}>
                   {getIconTt("Whatsapp", { size: 30 })}{" "}
                </Link>
             </div>
