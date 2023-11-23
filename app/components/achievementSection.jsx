@@ -31,7 +31,10 @@ const AchievementsSection = () => {
             );
 
             const sumCommits = totalCommits.reduce((acc, count) => acc + count, 0);
-            setCommitCount(sumCommits + 300); // Add 300 to the total commit count
+            setCommitCount(sumCommits + 300);
+            if (commitCount == NaN) {
+               setCommitCount(0);
+            }
          } catch (error) {
             console.error("Error fetching commits:", error);
          }

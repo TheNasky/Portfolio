@@ -26,7 +26,7 @@ const AchievementsSection2 = () => {
                      `https://api.github.com/repos/TheNasky/${repo.name}/commits`
                   );
                   const commits = await commitResponse.json();
-                  return commits.length;
+                  return commits.length || 0;
                })
             );
 
