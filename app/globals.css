@@ -27,6 +27,10 @@ body {
 }
 
 .gradient-background2 {
+   @apply bg-gradient-to-br from-cyan-400 via-green-500 to-[#3fcb7c] hover:from-cyan-300 hover:via-green-400 hover:to-[#5af89f] hover:scale-x-105 hover:scale-y-105 transition duration-300 ease-out;
+}
+
+.gradient-background3 {
    @apply bg-gradient-to-br from-cyan-400 via-teal-400 to-green-500 hover:from-cyan-300 hover:via-teal-300 hover:to-green-500 transform hover:scale-x-105 hover:scale-y-100 transition duration-300 ease-out;
 }
 
