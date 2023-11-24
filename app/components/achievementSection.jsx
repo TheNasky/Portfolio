@@ -30,8 +30,7 @@ const AchievementsSection = () => {
                         `https://api.github.com/repos/TheNasky/${repo.name}/commits`,
                         {
                            headers: {
-                              Authorization:
-                                 "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",
+                              Authorization: process.env.GITHUB_TOKEN,
                            },
                         }
                      );

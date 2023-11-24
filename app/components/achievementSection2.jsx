@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 
 const AnimatedNumbers = dynamic(() => import("react-animated-numbers"), { ssr: false });
 
-const AchievementsSection2  = () => {
+const AchievementsSection2 = () => {
    const [commitCount, setCommitCount] = useState(0);
 
    useEffect(() => {
@@ -17,8 +17,7 @@ const AchievementsSection2  = () => {
             if (!lastFetchTime || currentTime - lastFetchTime > TEN_MINUTES) {
                const response = await fetch("https://api.github.com/users/TheNasky/repos", {
                   headers: {
-                     Authorization:
-                        "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",
+                     Authorization: process.env.GITHUB_TOKEN,
                   },
                });
                const repositories = await response.json();
