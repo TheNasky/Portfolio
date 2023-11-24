@@ -16,7 +16,7 @@ export const metadata = {
       title: "Valentín Ballesteros",
       description: "Valentín Ballesteros' Portfolio",
       images: [
-        {
+         {
             url: "/public/images/1.webp",
             width: 800,
             height: 800,
