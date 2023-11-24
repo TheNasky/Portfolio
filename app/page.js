@@ -1,3 +1,4 @@
+import Head from "next/head";
 import AboutSection from "./components/aboutSection";
 import AchievementsSection from "./components/achievementSection";
 import AchievementsSection2 from "./components/achievementSection2";
@@ -10,15 +11,25 @@ import ScrollUpButton from "./components/scrollUpButton";
 export default function Home() {
    return (
       <main className="flex min-h-screen flex-col bg-[#121212]">
-         <Navbar></Navbar>
+         <Head>
+            <title>Valentín Ballesteros' Portfolio</title>
+            <meta name="description" content="Valentín Ballesteros' Portfolio" />
+            {/* Open Graph meta tags for better sharing on social media */}
+            <meta property="og:title" content="Valentín Ballesteros' Portfolio" />
+            <meta property="og:description" content="Valentín Ballesteros' Portfolio" />
+            <meta property="og:image" content="./public/images/icons/NextJs.webp" />
+            {/* Favicon */}
+            <link rel="icon" href="./public/images/icons/NextJs.webp" />
+         </Head>
+         <Navbar />
          <div className="container mx-auto mt-16 lg:mt-24 py-8 px-6 lg:px-0">
-            <ScrollUpButton></ScrollUpButton>
-            <HeroSection></HeroSection>
-            <AchievementsSection></AchievementsSection>
-            <AboutSection></AboutSection>
-            <ProjectsSection></ProjectsSection>
-            <AchievementsSection2></AchievementsSection2>
-            <EmailSection></EmailSection>
+            <ScrollUpButton />
+            <HeroSection />
+            <AchievementsSection />
+            <AboutSection />
+            <ProjectsSection />
+            <AchievementsSection2 />
+            <EmailSection />
          </div>
       </main>
    );
