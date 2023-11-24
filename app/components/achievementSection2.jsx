@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
+import dotenv from 'dotenv';
 
 const AnimatedNumbers = dynamic(() => import("react-animated-numbers"), { ssr: false });
 
@@ -17,7 +18,7 @@ const AchievementsSection2 = () => {
             if (!lastFetchTime || currentTime - lastFetchTime > TEN_MINUTES) {
                const response = await fetch("https://api.github.com/users/TheNasky/repos", {
                   headers: {
-                     Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+                     Authorization: `${process.env.GITHUB_TOKEN}`,
                   },
                });
                const repositories = await response.json();
