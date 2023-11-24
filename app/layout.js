@@ -19,10 +19,13 @@ export const metadata = {
       site_name: "Valentín Ballesteros",
       images: [
          {
-            url: "/public/images/icons/NextJs.webp",
+            url: "/public/images/icons/NextJs.png",
          },
          {
-            url: "images/icons/NextJs.webp",
+            url: "images/1.png",
+         },
+         {
+            url: "https://valentinballesteros2023.vercel.app/_next/image?url=%2Fimages%2F1.webp&w=640&q=75",
          },
       ],
    },
