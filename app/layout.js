@@ -12,14 +12,12 @@ export const metadata = {
    icons: {
       icon: "/public/images/icons/NextJs.webp",
    },
-   opengraph: {
+   openGraph: {
       title: "Valentín Ballesteros",
       description: "Valentín Ballesteros' Portfolio",
       images: [
          {
-            url: "/images/1.webp",
-            width: 800,
-            height: 800,
+            url: "/public/images/1.webp",
          },
       ],
    },
