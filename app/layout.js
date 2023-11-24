@@ -15,6 +15,8 @@ export const metadata = {
    openGraph: {
       title: "Valentín Ballesteros",
       description: "Valentín Ballesteros Portfolio",
+      url: "https://valentinballesteros2023.vercel.app/",
+      site_name: "Valentín Ballesteros",
       images: [
          {
             url: "/public/images/icons/NextJs.webp",
