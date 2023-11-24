@@ -11,14 +11,17 @@ import ScrollUpButton from "./components/scrollUpButton";
 export const metadata = {
    title: "Valentín Ballesteros' Portfolio",
    description: "Valentín Ballesteros' Portfolio",
-   image: "./public/images/icons/NextJs.webp", 
-   favicon: "./public/images/icons/NextJs.webp",
-   icon: "./public/images/icons/NextJs.webp"
- }
+   image: "./public/images/icons/NextJs.webp",
+};
 export default function Home() {
    return (
       <main className="flex min-h-screen flex-col bg-[#121212]">
          <Head>
+            <meta name="image" content="./public/images/icons/NextJs.webp" />
+            <meta property="og:title" content="Valentín Ballesteros' Portfolio" />
+            <meta property="og:description" content="Valentín Ballesteros' Portfolio" />
+            <meta property="og:image" content={"./public/images/icons/NextJs.webp"} />
+            {/* Favicon */}
             <link rel="icon" href="./public/images/icons/NextJs.webp" />
          </Head>
          <Navbar />
