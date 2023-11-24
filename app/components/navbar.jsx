@@ -26,7 +26,7 @@ export default function Navbar() {
    };
 
    return (
-      <nav className="fixed top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-95 mb-4 border-b-2 border-[#33353f] pb-3">
+      <nav className="fixed top-0 left-0 right-0 bg-[#121212] bg-opacity-100 z-50 lg:bg-opacity-95 lg:mb-4 border-b-2 border-[#33353f] pb-3">
          <div className="flex flex-wrap items-center justify-between mx-auto p-4">
             <Link href={"/"} className="text-2xl md:text-3xl text-white font-semibold">
                <span className="font-extrabold">Valentín</span>
@@ -79,7 +79,7 @@ export default function Navbar() {
                   </button>
                )}
             </div>
-            <div className="menu hidden md:block md:w-auto" id="navbar">
+            <div className="menu hidden md:block md:w-auto z-50" id="navbar">
                <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8 mt-0">
                   {navLinks.map((link, index) => (
                      <li key={index}>
@@ -92,16 +92,18 @@ export default function Navbar() {
                </ul>
             </div>
          </div>
-         {navbarOpen
-            ? navLinks.map((link, index) => (
-               <li key={index}>
-               <NavLink
-                  onClick={() => scrollToSection(link.path, link.offset)}
-                  title={link.title}
-               />
-               </li>
-                  ))
-            : null}
+         <ul className=" flex flex-col items-center">
+            {navbarOpen
+               ? navLinks.map((link, index) => (
+                    <li key={index}>
+                       <NavLink
+                          onClick={() => scrollToSection(link.path, link.offset)}
+                          title={link.title}
+                       />
+                    </li>
+                 ))
+               : null}
+         </ul>
       </nav>
    );
 }

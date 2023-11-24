@@ -30,7 +30,7 @@
          <button
             className={`${
                isVisible ? "block" : "hidden"
-            } fixed top-44 left-4 p-2 md:p-4 2xl:ml-12 2xl:p-6 gradient-background2 z-50 text-white rounded-full cursor-pointer`}
+            } fixed top-44 left-4 p-2 md:p-4 2xl:ml-12 2xl:p-6 gradient-background2 z-40 text-white rounded-full cursor-pointer`}
             onClick={scrollToTop}
          >
             <svg

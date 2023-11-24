@@ -16,14 +16,24 @@ const AchievementsSection = () => {
    useEffect(() => {
       const fetchCommits = async () => {
          try {
-            const response = await fetch("https://api.github.com/users/TheNasky/repos");
+            const response = await fetch("https://api.github.com/users/TheNasky/repos", {
+               headers: {
+                  Authorization:
+                     "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",
+               },
+            });
             const repositories = await response.json();
 
             // Calculate total commits for all repositories
             const totalCommits = await Promise.all(
                repositories.map(async (repo) => {
                   const commitResponse = await fetch(
-                     `https://api.github.com/repos/TheNasky/${repo.name}/commits`
+                     `https://api.github.com/repos/TheNasky/${repo.name}/commits`,
+                     {
+                        headers: {
+                           Authorization: "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",
+                        },
+                     }
                   );
                   const commits = await commitResponse.json();
                   return commits.length;

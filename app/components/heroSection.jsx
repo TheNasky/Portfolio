@@ -48,7 +48,7 @@ export default function HeroSection() {
                </p>
                <div className="flex justify-center md:justify-normal">
                   <button
-                     onClick={() => scrollToSection("#contact", 20)}
+                     onClick={() => scrollToSection("#contact", -140)}
                      className="mr-4 px-1 py-1 w-full md:w-fit rounded-full gradient-background text-white mt-3"
                   >
                      <span className="transition ease-in-out delay-45 w-full block bg-[#121212] hover:bg-stone-700 rounded-full px-6 py-3 2xl:text-2xl 2xl:px-8 2xl:py-4">
