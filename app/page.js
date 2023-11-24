@@ -8,17 +8,17 @@ import Navbar from "./components/navbar";
 import ProjectsSection from "./components/projectsSection";
 import ScrollUpButton from "./components/scrollUpButton";
 
+export const metadata = {
+   title: "Valentín Ballesteros' Portfolio",
+   description: "Valentín Ballesteros' Portfolio",
+   image: "./public/images/icons/NextJs.webp", 
+   favicon: "./public/images/icons/NextJs.webp",
+   icon: "./public/images/icons/NextJs.webp"
+ }
 export default function Home() {
    return (
       <main className="flex min-h-screen flex-col bg-[#121212]">
          <Head>
-            <title>Valentín Ballesteros' Portfolio</title>
-            <meta name="description" content="Valentín Ballesteros' Portfolio" />
-            {/* Open Graph meta tags for better sharing on social media */}
-            <meta property="og:title" content="Valentín Ballesteros' Portfolio" />
-            <meta property="og:description" content="Valentín Ballesteros' Portfolio" />
-            <meta property="og:image" content="./public/images/icons/NextJs.webp" />
-            {/* Favicon */}
             <link rel="icon" href="./public/images/icons/NextJs.webp" />
          </Head>
          <Navbar />
