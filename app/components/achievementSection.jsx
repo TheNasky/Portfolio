@@ -17,8 +17,7 @@ const AchievementsSection = () => {
             if (!lastFetchTime || currentTime - lastFetchTime > TEN_MINUTES) {
                const response = await fetch("https://api.github.com/users/TheNasky/repos", {
                   headers: {
-                     Authorization:
-                        "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",
+                     Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
                   },
                });
                const repositories = await response.json();
