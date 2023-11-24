@@ -60,7 +60,7 @@ const AchievementsSection2  = () => {
    const achievementsList = [
       {
          prefix: "+",
-         metric: "Years",
+         metric: "Years of Experience",
          value: "2",
       },
       {

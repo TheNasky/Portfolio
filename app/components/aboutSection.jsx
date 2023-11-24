@@ -93,7 +93,6 @@ const TAB_DATA = [
       content: (
          <ul>
             <li>Team Leader at: UltraCode From: Oct,2022 to Now</li>
-            <li>Freelancer Web Developer</li>
          </ul>
       ),
    },

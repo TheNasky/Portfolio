@@ -5,7 +5,7 @@
       const [isVisible, setIsVisible] = useState(false);
 
       const handleScroll = () => {
-         if (window.scrollY > 310) {
+         if (window.scrollY > 100) {
             setIsVisible(true);
          } else {
             setIsVisible(false);
@@ -30,7 +30,7 @@
          <button
             className={`${
                isVisible ? "block" : "hidden"
-            } fixed top-44 left-4 p-2 md:p-4 2xl:ml-12 2xl:p-6 gradient-background2 z-40 text-white rounded-full cursor-pointer`}
+            } fixed bottom-4 right-4 p-2 md:p-3 2xl:p-5 2xl:mb-6 2xl:mr-6 gradient-background2 z-40 text-white rounded-full cursor-pointer`}
             onClick={scrollToTop}
          >
             <svg
@@ -39,7 +39,7 @@
                viewBox="0 0 24 24"
                strokeWidth={1.5}
                stroke="currentColor"
-               className="w-6 h-6 2xl:w-12 2xl:h-12"
+               className="w-5 h-5 2xl:w-10 2xl:h-10"
             >
                <path
                   strokeLinecap="round"

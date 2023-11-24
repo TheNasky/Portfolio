@@ -45,20 +45,22 @@ const EmailSection = () => {
          className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 relative"
       >
          <div className="z-10">
-            <h5 className="text-xl font-bold text-white my-2">Let&apos;s Connect</h5>
-            <p className="text-[#ADB7BE] mb-4 max-w-md">
+            <h5 className="text-xl font-bold text-white my-2  2xl:text-3xl">
+               Let&apos;s Connect
+            </h5>
+            <p className="text-[#ADB7BE] 2xl:text-xl mb-4 max-w-md">
                I'm always looking for new opportunities and my inbox is always open whether you
                have a question or just want to say hi. I'll try my best to get back to you!
             </p>
             <div className="socials flex flex-row gap-2">
                <Link href={"https://github.com/TheNasky"}>
-                  {getIconTt("Github", { size: 30 })}{" "}
+                  {getIconTt("Github", { size: 30 })}
                </Link>
                <Link href={"https://www.linkedin.com/in/valent%C3%ADn-ballesteros-49868023a/"}>
-                  {getIconTt("Linkedin", { size: 30 })}{" "}
+                  {getIconTt("Linkedin", { size: 30 })}
                </Link>
                <Link href={"https://wa.me/+541161535767"}>
-                  {getIconTt("Whatsapp", { size: 30 })}{" "}
+                  {getIconTt("Whatsapp", { size: 30 })}
                </Link>
             </div>
          </div>
