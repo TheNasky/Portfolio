@@ -1,14 +1,8 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
-import { useState, useEffect } from "react";
 
-const AnimatedNumbers = dynamic(
-   () => {
-      return import("react-animated-numbers");
-   },
-   { ssr: false }
-);
+const AnimatedNumbers = dynamic(() => import("react-animated-numbers"), { ssr: false });
 
 const AchievementsSection = () => {
    const [commitCount, setCommitCount] = useState(0);
@@ -16,34 +10,45 @@ const AchievementsSection = () => {
    useEffect(() => {
       const fetchCommits = async () => {
          try {
-            const response = await fetch("https://api.github.com/users/TheNasky/repos", {
-               headers: {
-                  Authorization:
-                     "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",
-               },
-            });
-            const repositories = await response.json();
+            const lastFetchTime = localStorage.getItem("lastFetchTime");
+            const currentTime = new Date().getTime();
+            const TEN_MINUTES = 10 * 60 * 1000;
 
-            // Calculate total commits for all repositories
-            const totalCommits = await Promise.all(
-               repositories.map(async (repo) => {
-                  const commitResponse = await fetch(
-                     `https://api.github.com/repos/TheNasky/${repo.name}/commits`,
-                     {
-                        headers: {
-                           Authorization: "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",
-                        },
-                     }
-                  );
-                  const commits = await commitResponse.json();
-                  return commits.length;
-               })
-            );
+            if (!lastFetchTime || currentTime - lastFetchTime > TEN_MINUTES) {
+               const response = await fetch("https://api.github.com/users/TheNasky/repos", {
+                  headers: {
+                     Authorization:
+                        "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",
+                  },
+               });
+               const repositories = await response.json();
 
-            const sumCommits = totalCommits.reduce((acc, count) => acc + count, 0);
-            setCommitCount(sumCommits + 300);
-            if (commitCount == NaN) {
-               setCommitCount(0);
+               // Calculate total commits for all repositories
+               const totalCommits = await Promise.all(
+                  repositories.map(async (repo) => {
+                     const commitResponse = await fetch(
+                        `https://api.github.com/repos/TheNasky/${repo.name}/commits`,
+                        {
+                           headers: {
+                              Authorization:
+                                 "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",
+                           },
+                        }
+                     );
+                     const commits = await commitResponse.json();
+                     return commits.length;
+                  })
+               );
+
+               const sumCommits = totalCommits.reduce((acc, count) => acc + count, 0);
+               setCommitCount(sumCommits + 300);
+
+               // Save the current time and commit count to localStorage
+               localStorage.setItem("lastFetchTime", currentTime);
+               localStorage.setItem("commitCount", sumCommits + 300);
+            } else {
+               // If within the 10-minute window, use the stored commit count
+               setCommitCount(parseInt(localStorage.getItem("commitCount")));
             }
          } catch (error) {
             console.error("Error fetching commits:", error);
@@ -52,6 +57,7 @@ const AchievementsSection = () => {
 
       fetchCommits();
    }, []);
+
    const achievementsList = [
       {
          prefix: "+",
