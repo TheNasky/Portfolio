@@ -1,8 +1,14 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import dynamic from "next/dynamic";
+import { useState, useEffect } from "react";
 
-const AnimatedNumbers = dynamic(() => import("react-animated-numbers"), { ssr: false });
+const AnimatedNumbers = dynamic(
+   () => {
+      return import("react-animated-numbers");
+   },
+   { ssr: false }
+);
 
 const AchievementsSection2 = () => {
    const [commitCount, setCommitCount] = useState(0);
@@ -10,61 +16,35 @@ const AchievementsSection2 = () => {
    useEffect(() => {
       const fetchCommits = async () => {
          try {
-            const lastFetchTime = localStorage.getItem("lastFetchTime");
-            const currentTime = new Date().getTime();
-            const isCachedValueValid =
-               lastFetchTime && currentTime - parseInt(lastFetchTime) < 600000; // 10 minutes in milliseconds
+            const response = await fetch("https://api.github.com/users/TheNasky/repos", {
+               headers: {
+                  Authorization:
+                     "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",
+               },
+            });
+            const repositories = await response.json();
 
-            if (isCachedValueValid) {
-               // Use cached value
-               const cachedValue = localStorage.getItem("cachedCommitCount");
-               setCommitCount(parseInt(cachedValue));
-            } else {
-               // Replace 'YOUR_GITHUB_TOKEN' with your actual GitHub personal access token
-               const githubToken = process.env.GITHUB_TOKEN
-               const response = await fetch("https://api.github.com/user/repos", {
-                  headers: {
-                     Authorization: `Bearer ${githubToken}`,
-                  },
-               });
-
-               if (!response.ok) {
-                  throw new Error(`GitHub API request failed with status: ${response.status}`);
-               }
-
-               const repositories = await response.json();
-
-               // Calculate total commits for all repositories
-               const totalCommits = await Promise.all(
-                  repositories.map(async (repo) => {
-                     const commitResponse = await fetch(
-                        `https://api.github.com/repos/${repo.full_name}/commits`,
-                        {
-                           headers: {
-                              Authorization: `Bearer ${githubToken}`,
-                           },
-                        }
-                     );
-
-                     if (!commitResponse.ok) {
-                        throw new Error(
-                           `GitHub API request failed with status: ${commitResponse.status}`
-                        );
+            // Calculate total commits for all repositories
+            const totalCommits = await Promise.all(
+               repositories.map(async (repo) => {
+                  const commitResponse = await fetch(
+                     `https://api.github.com/repos/TheNasky/${repo.name}/commits`,
+                     {
+                        headers: {
+                           Authorization:
+                              "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",
+                        },
                      }
+                  );
+                  const commits = await commitResponse.json();
+                  return commits.length;
+               })
+            );
 
-                     const commits = await commitResponse.json();
-                     return commits.length;
-                  })
-               );
-
-               const sumCommits = totalCommits.reduce((acc, count) => acc + count, 0);
-               const newCommitCount = sumCommits + 300;
-
-               // Save new value and timestamp in local storage
-               localStorage.setItem("cachedCommitCount", newCommitCount);
-               localStorage.setItem("lastFetchTime", currentTime.toString());
-
-               setCommitCount(newCommitCount);
+            const sumCommits = totalCommits.reduce((acc, count) => acc + count, 0);
+            setCommitCount(sumCommits + 300);
+            if (commitCount == NaN) {
+               setCommitCount(0);
             }
          } catch (error) {
             console.error("Error fetching commits:", error);
@@ -73,7 +53,6 @@ const AchievementsSection2 = () => {
 
       fetchCommits();
    }, []);
-
    const achievementsList = [
       {
          prefix: "+",
