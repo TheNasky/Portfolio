@@ -30,8 +30,7 @@ const AchievementsSection2 = () => {
                         `https://api.github.com/repos/TheNasky/${repo.name}/commits`,
                         {
                            headers: {
-                              Authorization:
-                                 "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",
+                              Authorization: `${process.env.GITHUB_TOKEN}`,
                            },
                         }
                      );
@@ -41,11 +40,11 @@ const AchievementsSection2 = () => {
                );
 
                const sumCommits = totalCommits.reduce((acc, count) => acc + count, 0);
-               setCommitCount(sumCommits + 300);
+               setCommitCount(sumCommits+300);
 
                // Save the current time and commit count to localStorage
                localStorage.setItem("lastFetchTime", currentTime);
-               localStorage.setItem("commitCount", sumCommits + 300);
+               localStorage.setItem("commitCount", commitCount);
             } else {
                // If within the 10-minute window, use the stored commit count
                setCommitCount(parseInt(localStorage.getItem("commitCount")));
@@ -57,6 +56,7 @@ const AchievementsSection2 = () => {
 
       fetchCommits();
    }, []);
+
    const achievementsList = [
       {
          prefix: "+",
@@ -80,7 +80,7 @@ const AchievementsSection2 = () => {
    ];
 
    return (
-      <section className="py-8  xl:gap-16 sm:py-16 2xl:pt-12 mt-12 2xl:mt-16 hidden sm:block">
+      <section className="py-8  xl:gap-16 sm:py-16 ">
          <div className="sm:border-[#33353F] sm:border rounded-md py-8 px-16 flex flex-col sm:flex-row items-center justify-between">
             {achievementsList.map((achievement, index) => {
                return (

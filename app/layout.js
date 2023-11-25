@@ -4,6 +4,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
+   metadataBase: new URL("https://valentinballesteros2023.vercel.app/"),
    title: {
       default: "Valentín Ballesteros",
       template: "%s",
@@ -29,7 +30,9 @@ export const metadata = {
          },
       ],
    },
+   
 };
+
 
 export default function RootLayout({ children }) {
    return (

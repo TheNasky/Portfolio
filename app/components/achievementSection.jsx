@@ -30,7 +30,7 @@ const AchievementsSection = () => {
                         `https://api.github.com/repos/TheNasky/${repo.name}/commits`,
                         {
                            headers: {
-                              Authorization: process.env.GITHUB_TOKEN,
+                              Authorization: `${process.env.GITHUB_TOKEN}`,
                            },
                         }
                      );
@@ -40,11 +40,11 @@ const AchievementsSection = () => {
                );
 
                const sumCommits = totalCommits.reduce((acc, count) => acc + count, 0);
-               setCommitCount(sumCommits + 300);
+               setCommitCount(sumCommits+300);
 
                // Save the current time and commit count to localStorage
                localStorage.setItem("lastFetchTime", currentTime);
-               localStorage.setItem("commitCount", sumCommits + 300);
+               localStorage.setItem("commitCount", commitCount);
             } else {
                // If within the 10-minute window, use the stored commit count
                setCommitCount(parseInt(localStorage.getItem("commitCount")));
