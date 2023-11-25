@@ -7,7 +7,7 @@ import NavLink from "./navLink";
 const navLinks = [
    { title: "About", path: "#about", offset: -55 },
    { title: "Projects", path: "#projects", offset: -110 },
-   { title: "Contact", path: "#contact", offset: -140 },
+   { title: "Contact", path: "#contact", offset: -130 },
 ];
 
 export default function Navbar() {
