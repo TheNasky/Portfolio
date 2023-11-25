@@ -1,62 +1,10 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
-import dotenv from 'dotenv';
 
 const AnimatedNumbers = dynamic(() => import("react-animated-numbers"), { ssr: false });
 
 const AchievementsSection2 = () => {
-   const [commitCount, setCommitCount] = useState(0);
-
-   useEffect(() => {
-      const fetchCommits = async () => {
-         try {
-            const lastFetchTime = localStorage.getItem("lastFetchTime");
-            const currentTime = new Date().getTime();
-            const TEN_MINUTES = 10 * 60 * 1000;
-
-            if (!lastFetchTime || currentTime - lastFetchTime > TEN_MINUTES) {
-               const response = await fetch("https://api.github.com/users/TheNasky/repos", {
-                  headers: {
-                     Authorization: `${process.env.GITHUB_TOKEN}`,
-                  },
-               });
-               const repositories = await response.json();
-
-               // Calculate total commits for all repositories
-               const totalCommits = await Promise.all(
-                  repositories.map(async (repo) => {
-                     const commitResponse = await fetch(
-                        `https://api.github.com/repos/TheNasky/${repo.name}/commits`,
-                        {
-                           headers: {
-                              Authorization: `${process.env.GITHUB_TOKEN}`,
-                           },
-                        }
-                     );
-                     const commits = await commitResponse.json();
-                     return commits.length;
-                  })
-               );
-
-               const sumCommits = totalCommits.reduce((acc, count) => acc + count, 0);
-               setCommitCount(sumCommits+300);
-
-               // Save the current time and commit count to localStorage
-               localStorage.setItem("lastFetchTime", currentTime);
-               localStorage.setItem("commitCount", commitCount);
-            } else {
-               // If within the 10-minute window, use the stored commit count
-               setCommitCount(parseInt(localStorage.getItem("commitCount")));
-            }
-         } catch (error) {
-            console.error("Error fetching commits:", error);
-         }
-      };
-
-      fetchCommits();
-   }, []);
-
    const achievementsList = [
       {
          prefix: "+",
@@ -72,10 +20,6 @@ const AchievementsSection2 = () => {
          prefix: "~",
          metric: "Clients",
          value: "10",
-      },
-      {
-         metric: "Commits",
-         value: commitCount.toString(),
       },
    ];
 
