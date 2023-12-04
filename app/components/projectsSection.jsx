@@ -39,7 +39,7 @@ const projectsData = [
       id: 4,
       title: "Placeholder",
       description: "Placeholder Project",
-      image: "/images/projects/juan.jfif",
+      image: "/images/Desktop.webp",
       tags: ["All"],
       githubURL: "/",
       previewURL: "/",

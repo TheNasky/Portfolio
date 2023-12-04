@@ -143,7 +143,7 @@ export default function AboutSection() {
                      Databases, with Demonstrated success in developing efficient web
                      applications and designing robust RESTful APIs.
                   </p>
-                  <div className="flex flex-row mt-8 lg:justify-start justify-center 2xl:text-2xl">
+                  <div className="flex flex-row mt-8 lg:justify-start justify-center text-m 2xl:text-2xl">
                      <TabButton
                         selectTab={() => handleTabChange("skills")}
                         active={currentTab === "skills"}
