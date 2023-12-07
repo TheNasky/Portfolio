@@ -138,9 +138,18 @@ export default function AboutSection() {
                <div className="mt-4 md:mt-0 text-left flex flex-col h-full bg-[#181818] rounded-lg p-4 2xl:p-8 2xl:w-full 2xl:h-full">
                   <h2 className="text-4xl font-bold text-white mb-4 2xl:text-6xl">About Me</h2>
                   <p className="text-base md:text-m 2xl:text-xl 2xl:mb-2">
-                     I'm Valentín, Dedicated Full Stack Web Developer boasting 2 years of
-                     practical experience in Node.js, React, Next.js, Nest.js, ExpressJs, and
-                     Databases, with Demonstrated success in developing efficient web
+                     I'm Valentín, Dedicated
+                     <span className="text-transparent bg-clip-text gradient-background">
+                        {" "}
+                        Full Stack{" "}
+                     </span>
+                     Web Developer boasting
+                     <span className="text-transparent bg-clip-text gradient-background">
+                        {" "}
+                        2 years{" "}
+                     </span>
+                     of practical experience in Node.js, React, Next.js, Nest.js, ExpressJs,
+                     and Databases, with Demonstrated success in developing efficient web
                      applications and designing robust RESTful APIs.
                   </p>
                   <div className="flex flex-row mt-8 lg:justify-start justify-center text-m 2xl:text-2xl">
