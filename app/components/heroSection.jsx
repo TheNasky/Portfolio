@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { TypeAnimation } from "react-type-animation";
-
+import { getIconTt } from "@/public/icons/icons.js";
 
 const scrollToSection = (path, offset) => {
    const element = document.querySelector(path);
@@ -55,11 +55,31 @@ export default function HeroSection() {
                         Contact Me
                      </span>
                   </button>
-                  <a href="/Valentín Ballesteros Resume.pdf" download="Valentín Ballesteros Resume.pdf" className=" px-1 py-1 w-full md:w-fit rounded-full gradient-background text-white mt-3">
+                  <a
+                     href="/Valentín Ballesteros Resume.pdf"
+                     download="Valentín Ballesteros Resume.pdf"
+                     className=" px-1 py-1 w-full md:w-fit rounded-full gradient-background text-white mt-3"
+                  >
                      <span className="transition ease-in-out delay-45 w-full block bg-[#121212] hover:bg-stone-700 rounded-full px-6 py-3 2xl:text-2xl 2xl:px-8 2xl:py-4">
                         Download CV
                      </span>
                   </a>
+
+                  <div className="socials flex flex-row gap-2 ml-4 mt-4 items-center hidden md:flex">
+                     <Link href={"https://github.com/TheNasky"}>
+                        {getIconTt("Github", { size: 30 })}
+                     </Link>
+                     <Link
+                        href={
+                           "https://www.linkedin.com/in/valent%C3%ADn-ballesteros-49868023a/"
+                        }
+                     >
+                        {getIconTt("Linkedin", { size: 30 })}
+                     </Link>
+                     <Link href={"https://wa.me/+541161535767"}>
+                        {getIconTt("Whatsapp", { size: 30 })}
+                     </Link>
+                  </div>
                </div>
             </div>
             <div className="col-span-5 xl:col-span-4 place-self-center mt-8 lg:mt-0">
