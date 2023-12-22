@@ -62,3 +62,9 @@ body {
       max-width: 1536px;
    }
 }
+
+@media (min-width: 370px) {
+   .show-at-370 {
+      display: block !important;
+   }
+}

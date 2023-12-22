@@ -22,66 +22,97 @@ const TAB_DATA = [
             <ul>
                <li className="xl:pb-1 flex items-center 2xl:text-2xl 2xl:pb-2">
                   React.Js
-                  <span className="pt-2 pl-1">{getIcon("ReactJs", { size: 25 })}</span>
+                  <span className="pt-2 pl-1 hidden show-at-370">
+                     {getIcon("ReactJs", { size: 25 })}
+                  </span>
                </li>
                <li className="xl:pb-1 flex items-center 2xl:text-2xl 2xl:pb-2">
                   Next.Js
-                  <span className="pt-2 pl-1">{getIcon("NextJs", { size: 25 })}</span>
+                  <span className="pt-2 pl-1 hidden show-at-370">
+                     {getIcon("NextJs", { size: 25 })}
+                  </span>
                </li>
                <li className="xl:pb-1 flex items-center 2xl:text-2xl 2xl:pb-2">
                   Node.Js
-                  <span className="pt-2 pl-1">{getIcon("NodeJs", { size: 25 })}</span>
+                  <span className="pt-2 pl-1 hidden show-at-370">
+                     {getIcon("NodeJs", { size: 25 })}
+                  </span>
                </li>
                <li className="xl:pb-1 flex items-center 2xl:text-2xl 2xl:pb-2">
                   Nest.Js
-                  <span className="pt-2 pl-1">{getIcon("NestJs", { size: 25 })}</span>
+                  <span className="pt-2 pl-1 hidden show-at-370">
+                     {getIcon("NestJs", { size: 25 })}
+                  </span>
                </li>
                <li className="xl:pb-1 flex items-center 2xl:text-2xl 2xl:pb-2">
                   Express.Js
-                  <span className="pt-2 pl-1">{getIcon("ExpressJs", { size: 25 })}</span>
+                  <span className="pt-2 pl-1 hidden show-at-370">
+                     {getIcon("ExpressJs", { size: 25 })}
+                  </span>
                </li>
             </ul>
             <ul>
                <li className="xl:pb-1 flex items-center 2xl:text-2xl 2xl:pb-2">
                   Tailwind
-                  <span className="pt-2 pl-1">{getIcon("Tailwind", { size: 25 })}</span>
+                  <span className="pt-2 pl-1 hidden show-at-370">
+                     {getIcon("Tailwind", { size: 25 })}
+                  </span>
                </li>
                <li className="xl:pb-1 flex items-center 2xl:text-2xl 2xl:pb-2">
                   JavaScript
-                  <span className="pt-2 pl-1">{getIcon("JavaScript", { size: 25 })}</span>
+                  <span className="pt-2 pl-1 hidden show-at-370">
+                     {getIcon("JavaScript", { size: 25 })}
+                  </span>
                </li>
                <li className="xl:pb-1 flex items-center 2xl:text-2xl 2xl:pb-2">
                   TypeScript
-                  <span className="pt-2 pl-1">{getIcon("TypeScript", { size: 25 })}</span>
+                  <span className="pt-2 pl-1 hidden show-at-370">
+                     {getIcon("TypeScript", { size: 25 })}
+                  </span>
                </li>
                <li className="xl:pb-1 flex items-center 2xl:text-2xl 2xl:pb-2">
                   MongoDB
-                  <span className="pt-2 pl-1">{getIcon("MongoDB", { size: 25 })}</span>
+                  <span className="pt-2 pl-1 hidden show-at-370">
+                     {getIcon("MongoDB", { size: 25 })}
+                  </span>
                </li>
                <li className="xl:pb-1 flex items-center 2xl:text-2xl 2xl:pb-2">
                   Firebase
-                  <span className="pt-2 pl-1">{getIcon("Firebase", { size: 25 })}</span>
+                  <span className="pt-2 pl-1 hidden show-at-370">
+                     {getIcon("Firebase", { size: 25 })}
+                  </span>
                </li>
             </ul>
             <ul>
                <li className="xl:pb-1 flex items-center 2xl:text-2xl 2xl:pb-2">
                   Docker
-                  <span className="pt-2 pl-1">{getIcon("Docker", { size: 25 })}</span>
+                  <span className="pt-2 pl-1 hidden show-at-370">
+                     {getIcon("Docker", { size: 25 })}
+                  </span>
                </li>
                <li className="xl:pb-1 flex items-center 2xl:text-2xl 2xl:pb-2">
                   Kubernetes
-                  <span className="pt-2 pl-1">{getIcon("Kubernetes", { size: 25 })}</span>
+                  <span className="pt-2 pl-1 hidden show-at-370">
+                     {getIcon("Kubernetes", { size: 25 })}
+                  </span>
                </li>
                <li className="xl:pb-1 flex items-center 2xl:text-2xl 2xl:pb-2">
-                  HTML5 <span className="pt-2 pl-1">{getIcon("HTML5", { size: 25 })}</span>
+                  HTML5{" "}
+                  <span className="pt-2 pl-1 hidden show-at-370">
+                     {getIcon("HTML5", { size: 25 })}
+                  </span>
                </li>
                <li className="xl:pb-1 flex items-center 2xl:text-2xl 2xl:pb-2">
                   CSS
-                  <span className="pt-2 pl-1">{getIcon("CSS", { size: 25 })}</span>
+                  <span className="pt-2 pl-1 hidden show-at-370">
+                     {getIcon("CSS", { size: 25 })}
+                  </span>
                </li>
                <li className="xl:pb-1 flex items-center 2xl:text-2xl 2xl:pb-2">
                   SASS
-                  <span className="pt-2 pl-1">{getIcon("SASS", { size: 25 })}</span>
+                  <span className="pt-2 pl-1 hidden show-at-370">
+                     {getIcon("SASS", { size: 25 })}
+                  </span>
                </li>
             </ul>
          </div>
@@ -128,13 +159,16 @@ export default function AboutSection() {
       <section id="about" className="mb-24 2xl:mb-60 2xl:pt-36">
          <div className="text-white">
             <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 xl:gap-16 sm:py-16">
-               <Image
-                  src="/images/Desktop.webp"
-                  alt="About me image"
-                  className="rounded-lg 2xl:w-5/6 2xl:h-full"
-                  width={500}
-                  height={500}
-               />
+               <div className="flex justify-center lg:justify-start">
+                  <Image
+                     src="/images/Desktop.webp"
+                     alt="About me image"
+                     className="rounded-lg 2xl:w-5/6 2xl:h-full"
+                     width={500}
+                     height={500}
+                  />
+               </div>
+
                <div className="mt-4 md:mt-0 text-left flex flex-col h-full bg-[#181818] rounded-lg p-4 2xl:p-8 2xl:w-full 2xl:h-full">
                   <h2 className="text-4xl font-bold text-white mb-4 2xl:text-6xl">About Me</h2>
                   <p className="text-base md:text-m 2xl:text-xl 2xl:mb-2">
@@ -152,7 +186,7 @@ export default function AboutSection() {
                      and Databases, with Demonstrated success in developing efficient web
                      applications and designing robust RESTful APIs.
                   </p>
-                  <div className="flex flex-row mt-8 lg:justify-start justify-center text-m 2xl:text-2xl">
+                  <div className="flex flex-row mt-8 lg:justify-start justify-around text-m 2xl:text-2xl">
                      <TabButton
                         selectTab={() => handleTabChange("skills")}
                         active={currentTab === "skills"}
