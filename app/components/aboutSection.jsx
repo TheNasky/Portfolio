@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState, useTransition } from "react";
 import TabButton from "./tabButton";
-import { getIcon, getIconTt } from "@/public/icons/icons";
+import { getIcon, getIconTt } from "@/app/icons/icons";
 
 // Tooltip component
 const Tooltip = ({ text }) => (

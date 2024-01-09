@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 import Link from "next/link";
 import Image from "next/image";
-import { getIconTt } from "@/public/icons/icons";
+import { getIconTt } from "@/app/icons/icons";
 
 const EmailSection = () => {
    const [emailSubmitted, setEmailSubmitted] = useState(false);

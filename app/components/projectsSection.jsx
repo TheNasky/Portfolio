@@ -2,27 +2,27 @@
 import ProjectCard from "./projectCard";
 import ProjectTag from "./projectTag";
 import { useState, useRef } from "react";
-import { getIcon, getIconTt } from "@/public/icons/icons";
+import { getIcon, getIconTt } from "@/app/icons/icons";
 import { motion, useInView } from "framer-motion";
 const projectsData = [
    {
       id: 1,
+      title: "UltraCode Website",
+      description: "UltraCode's Landing Page and Website",
+      image: "/images/projects/UltraCode.webp",
+      tags: ["All", "Personal"],
+      githubURL: "https://github.com/UltraCode-Solutions/UltraCode-Website-v2/tree/main",
+      previewURL: "https://ultracode.vercel.app/",
+      icons: [getIconTt("ReactJs"), getIconTt("Vite"), getIconTt("Tailwind")],
+   },
+   {
+      id: 2,
       title: "NextJs Portfolio",
       description: "My 2023 Portfolio built with NextJs",
       image: "/images/projects/Portfolio.webp",
       tags: ["All", "Personal"],
       githubURL: "https://github.com/TheNasky/Portfolio",
       previewURL: "https://valentinballesteros2023.vercel.app/",
-      icons: [getIconTt("ReactJs"), getIconTt("NextJs"), getIconTt("Tailwind")],
-   },
-   {
-      id: 2,
-      title: "Placeholder",
-      description: "Placeholder Project",
-      image: "/images/Desktop.webp",
-      tags: ["All"],
-      githubURL: "/",
-      previewURL: "/",
       icons: [getIconTt("ReactJs"), getIconTt("NextJs"), getIconTt("Tailwind")],
    },
    {

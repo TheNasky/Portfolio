@@ -281,6 +281,20 @@ export const icons = [
          </div>
       ),
    },
+   {
+      name: "Vite",
+      component: ({ size = 25 }) => (
+         <div className="relative inline-block group">
+            <Image
+               src="/images/icons/Vite.webp"
+               alt="Vite Logo"
+               className=""
+               width={size}
+               height={size}
+            />
+         </div>
+      ),
+   },
 ];
 
 export const getIcon = (name, { size = 25 } = {}) => {

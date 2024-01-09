@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { TypeAnimation } from "react-type-animation";
-import { getIconTt } from "@/public/icons/icons.js";
+import { getIconTt } from "@/app/icons/icons.js";
 
 const scrollToSection = (path, offset) => {
    const element = document.querySelector(path);

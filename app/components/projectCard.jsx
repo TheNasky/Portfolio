@@ -20,6 +20,7 @@ export default function ProjectCard({
             >
                <Link
                   href={githubURL || "/"}
+                  target="_blank"
                   className="h-14 w-14 border-2 mr-8 relative rounded-full border-[#ADB7BE] hover:border-[#3fcb7c] group/link"
                >
                   <svg
@@ -40,6 +41,7 @@ export default function ProjectCard({
                </Link>
                <Link
                   href={previewURL || "/"}
+                  target="_blank"
                   className="h-14 w-14 border-2 relative rounded-full border-[#ADB7BE] hover:border-[#3fcb7c] group/link2"
                >
                   <svg
